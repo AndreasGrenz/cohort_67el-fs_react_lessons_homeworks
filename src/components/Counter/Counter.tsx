@@ -1,4 +1,4 @@
-import Button from "compnents/Button/Button";
+import Button from "components/Button/Button";
 
 import "./styles.css";
 import { type CounterProps } from "./types";

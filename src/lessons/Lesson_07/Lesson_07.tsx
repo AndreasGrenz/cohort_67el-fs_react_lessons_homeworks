@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import Button from "compnents/Button/Button";
-import Input from "compnents/Input/Input";
-import Counter from "compnents/Counter/Counter";
+import Button from "components/Button/Button";
+import Input from "components/Input/Input";
+import Counter from "components/Counter/Counter";
 
 import "./styles.css";
 import { WEATHER_CODES } from "./types";
