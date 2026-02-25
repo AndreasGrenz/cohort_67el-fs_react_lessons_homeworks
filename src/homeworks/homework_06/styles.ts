@@ -1,14 +1,15 @@
+import styled from "@emotion/styled";
 
-.homework_06_wrapper {
+export const Homework06wrapper = styled.div`
   display: flex;
   flex: 1;
   flex-wrap: wrap;
   padding: 80px;
   gap: 100px;
   justify-content: center;
-}
+`;
 
-.car_card {
+export const Carcard = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -18,9 +19,9 @@
   border-radius: 8px;
   padding: 20px;
   align-items: center;
-}
+`;
 
-.car_info {
+export const Carinfo = styled.div`
   font-size: 20px;
   font-weight: bold;
-}
+`;

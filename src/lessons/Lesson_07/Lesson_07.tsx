@@ -4,7 +4,7 @@ import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 import Counter from "components/Counter/Counter";
 
-import "./styles.css";
+import { Lesson07pagewrapper } from "./styles"
 import { WEATHER_CODES } from "./types";
 
 // !! Есть 2 основных способа вызова перерендера(обновления) компонента:
@@ -120,7 +120,7 @@ function Lesson_07() {
   };
 
   return (
-    <div className="lesson_07_page_wrapper">
+    <Lesson07pagewrapper>
       <Button name="Sipmple Button" onClick={sendCounterResult} />
       <Input
         id="simple-input"
@@ -129,7 +129,7 @@ function Lesson_07() {
         label="Simple Input"
       />
       <Counter count={count} onMinus={onMinus} onPlus={onPlus} />
-    </div>
+    </Lesson07pagewrapper>
   );
 }
 
