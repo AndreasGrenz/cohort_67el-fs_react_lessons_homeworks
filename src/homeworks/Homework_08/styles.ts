@@ -1,22 +1,20 @@
 import styled from "@emotion/styled";
 
-export const Homework08Wrapper = styled.div`
+export const PageWrapper = styled.div`
   display: flex;
-  flex: 1;
   flex-direction: column;
-  padding: 40px;
   align-items: center;
   justify-content: center;
+  flex: 1;
+  padding: 100px;
   gap: 30px;
 `;
 
-export const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+export const Paragraph = styled.p`
+  color: blue;
 `;
 
-export const Title = styled.h2`
-  font-size: 24px;
+export const FormElementContainer = styled.div`
+  width: 300px;
 `;
 
