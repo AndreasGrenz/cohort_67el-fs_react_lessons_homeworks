@@ -1,6 +1,5 @@
 import { v4 } from "uuid";
-
-import "./styles.css";
+import { Homework06wrapper, Carcard, Carinfo } from "./styles"
 import { type Car } from "./types";
 
 function Homework_06() {
@@ -14,17 +13,17 @@ function Homework_06() {
 
   const carCards = cars.map((car: Car) => {
     return (
-      <div key={v4()} className="car_card">
-        <p className="car_info">Brand: {car.brand}</p>
-        <p className="car_info">Price: {car.price}</p>
-        <p className="car_info">
+      <Carcard key={v4()} >
+        <Carinfo>Brand: {car.brand}</Carinfo>
+        <Carinfo>Price: {car.price}</Carinfo>
+        <Carinfo>
           Is Diesel: {car.isDiesel ? "Diesel" : "Non-diesel"}
-        </p>
-      </div>
+        </Carinfo>
+      </Carcard>
     );
   });
 
-  return <div className="homework_06_wrapper">{carCards}</div>;
+  return <Homework06wrapper>{carCards}</Homework06wrapper>;
 }
 
 export default Homework_06;

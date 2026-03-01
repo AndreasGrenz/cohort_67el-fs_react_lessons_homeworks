@@ -1,40 +1,39 @@
 import { useState } from "react";
+
 import Feedback from "components/Feedback/Feedback";
-import "./styles.css";
 
+import { Homework07pagewrapper } from "./styles"
 
-function Homework_07() {
-  console.log("Homework_07 render");
-
+function Homewwork_07() {
   const [like, setLike] = useState<number>(0);
   const [dislike, setDislike] = useState<number>(0);
 
   const onLike = (): void => {
-    setLike((prevValue) => prevValue + 1);
+    setLike((prevValue: number) => {
+      return prevValue + 1;
+    });
   };
 
   const onDislike = (): void => {
-    setDislike((prevValue) => prevValue + 1);
+    setDislike((prevValue: number) => prevValue + 1);
   };
 
-  const onReset = (): void => {
+  const resetResults = (): void => {
     setLike(0);
     setDislike(0);
   };
 
   return (
-    <div className="homework_07_wrapper">
-      <h2>Feedback</h2>
-
+    <Homework07pagewrapper>
       <Feedback
+        onDislike={onDislike}
+        onLike={onLike}
         like={like}
         dislike={dislike}
-        onLike={onLike}
-        onDislike={onDislike}
-        onReset={onReset}
+        resetResults={resetResults}
       />
-    </div>
+    </Homework07pagewrapper>
   );
 }
 
-export default Homework_07;
+export default Homewwork_07;
