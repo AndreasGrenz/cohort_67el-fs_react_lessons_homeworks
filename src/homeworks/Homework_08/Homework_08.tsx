@@ -1,48 +1,54 @@
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 
-import { Homework08Wrapper, Section, Title } from "./styles";
+import { PageWrapper, Paragraph, FormElementContainer } from "./styles"
 
 function Homework_08() {
+  const works = () => {
+    console.log("Button works");
+  };
+
   return (
-    <Homework08Wrapper>
-      <Section>
-        <Title>Buttons</Title>
-
-        <Button name="Default" />
-        <Button isRed name="Red" />
-        <Button disabled name="Disabled" />
-        <Button isRed disabled name="Red Disabled" />
-      </Section>
-
-      <Section>
-        <Title>Inputs</Title>
-
+    <PageWrapper>
+      <Paragraph>HW8</Paragraph>
+      <FormElementContainer>
+        <Button name="Simple button" onClick={works} />
+      </FormElementContainer>
+      <FormElementContainer>
+        <Button name="Delete button" isRed onClick={works} />
+      </FormElementContainer>
+      <FormElementContainer>
+        <Button name="Disabled button" disabled onClick={works} />
+      </FormElementContainer>
+      <FormElementContainer>
         <Input
-          id="input1"
-          name="input1"
-          label="Default Input"
-          placeholder="Type text"
+          id="simple_input"
+          label="Simple Input"
+          name="simple"
+          placeholder="Enter message"
         />
-
+      </FormElementContainer>
+      <FormElementContainer>
         <Input
-          id="input2"
-          name="input2"
+          id="error_input"
+          label="Error Input"
+          name="error"
+          placeholder="Enter message"
+          error="This field is required"
+        />
+      </FormElementContainer>
+      <FormElementContainer>
+        <Input
+          id="disabled_input"
           label="Disabled Input"
-          placeholder="Disabled"
+          name="disabled"
+          placeholder="Enter message"
           disabled
         />
-
-        <Input
-          id="input3"
-          name="input3"
-          label="Error Input"
-          placeholder="With error"
-          error="Some error"
-        />
-      </Section>
-    </Homework08Wrapper>
+      </FormElementContainer>
+    </PageWrapper>
   );
 }
 
 export default Homework_08;
+

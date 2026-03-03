@@ -1,32 +1,38 @@
-import {InputWrapper,InputLabel,StyledInput,ErrorText,} from "./styles";
+import { type InputProps } from "./types";
+import { InputWrapper, InputLabel, InputComponent, ErrorMessage } from "./styles";
 
-import type { InputProps } from "./types";
 
 function Input({
   id,
   name,
-  label,
-  placeholder,
   type = "text",
-  disabled,
-  error,
+  placeholder,
+  label,
+  disabled = false,
+  error = undefined,
+  value,
+  onChange
 }: InputProps) {
   return (
     <InputWrapper>
       <InputLabel htmlFor={id}>{label}</InputLabel>
-
-      <StyledInput
+      <InputComponent
         id={id}
         name={name}
         type={type}
         placeholder={placeholder}
         disabled={disabled}
-        error={error}
+        $error={error}
+        value={value}
+        onChange={onChange}
       />
-
-      {error && <ErrorText>{error}</ErrorText>}
+      {/* Условный рендеринг
+      - если слева от && стоит false, то элемент справа от && на странице не показывается(т.е скрывается)
+      - если слева от && стоит true, то элемент справа от && на странице показывается */}
+      {!!error && <ErrorMessage>{error}</ErrorMessage>}
     </InputWrapper>
   );
 }
 
 export default Input;
+
