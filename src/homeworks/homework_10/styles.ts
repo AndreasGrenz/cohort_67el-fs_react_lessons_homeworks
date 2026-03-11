@@ -9,15 +9,6 @@ export const PageWrapper = styled.div`
   background-color: rgba(0, 10, 66, 0.9);
 `;
 
-export const Text = styled.li`
-  font-size: 20px;
-  color: black;
-`;
-export const ErrorText = styled.p`
-  font-size: 20px;
-  color: black;
-`;
-
 export const Card = styled.div`
   display: flex;
   justify-content: space-between;
@@ -31,11 +22,21 @@ export const Card = styled.div`
   background-color: white;
 `;
 
-export const ContainerFacts = styled.ol`
+export const JokeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 15px;
+  flex: 1;
 `;
+
+export const Text = styled.p`
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+`;
+
+export const ErrorText = styled(Text)`
+  color: red;
+`;
+
 
