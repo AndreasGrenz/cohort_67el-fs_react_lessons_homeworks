@@ -1,7 +1,4 @@
-export interface LoginFormsProps{
-  id: string;
-  name: string;
-  type: string;
-  placeholder: string;
-  label: string;
+export enum LOGIN_FORM_VALUES {
+  EMAIL = "email",
+  PASSWORD = "password",
 }

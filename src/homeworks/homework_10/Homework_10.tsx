@@ -1,62 +1,95 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { v4 } from "uuid";
+// импорт React хуков
+import { useState, useEffect } from "react";
 
+// библиотека для HTTP запросов
+import axios from "axios";
+
+// наш компонент кнопки
 import Button from "components/Button/Button";
 
-import { PageWrapper, ContainerFacts, Card, Text, ErrorText } from "./styles";
+// адрес API для случайной шутки
+import { RANDOM_JOKE_URL } from "./types";
+
+// стилизованные компоненты
+import { PageWrapper, Text, JokeContainer, Card, ErrorText } from "./styles";
 
 function Homework_10() {
-  const [joke, setJoke] = useState<string[]>([]);
+
+  // state для текста шутки
+  const [joke, setJoke] = useState<undefined | string>(undefined);
+
+  // state для ошибки
   const [error, setError] = useState<undefined | string>(undefined);
+
+  // state для загрузки
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const RANDOM_JOKE_URL: string =
-    "https://official-joke-api.appspot.com/random_joke";
+  // функция запроса шутки
+  const getJoke = async () => {
 
-  const getRandomJoke = async () => {
+    // очищаем предыдущую шутку
+    setJoke(undefined);
+
+    // очищаем предыдущую ошибку
+    setError(undefined);
+
+    // включаем режим загрузки
+    setIsLoading(true);
+
     try {
-      setIsLoading(true);
-      setError(undefined);
 
+      // отправляем GET запрос на API
       const response = await axios.get(RANDOM_JOKE_URL);
 
-      const jokeText: string = `${response.data.setup} — ${response.data.punchline}`;
+      // получаем данные ответа
+      const data = response.data;
 
-      setJoke((prevValue: string[]) => {
-        return [...prevValue, jokeText];
-      });
+      // сохраняем шутку в state
+      setJoke(`${data.setup} ${data.punchline}`);
+
     } catch (error: any) {
-      setError("Some Network Error");
+
+      // если произошла ошибка — сохраняем её
+      setError(error.message);
+
     } finally {
+
+      // выключаем загрузку (выполняется всегда)
       setIsLoading(false);
+
     }
   };
 
-  const jokes = joke.map((oneJoke: string) => {
-    return <Text key={v4()}>{oneJoke}</Text>;
-  });
-
+  // useEffect выполняется один раз при загрузке компонента
   useEffect(() => {
-    getRandomJoke();
+    getJoke(); // получаем первую шутку
   }, []);
 
   return (
     <PageWrapper>
       <Card>
-        <ContainerFacts>
-          {!!joke && jokes}
-          {!!error && <ErrorText>{error}</ErrorText>}
-        </ContainerFacts>
 
+        <JokeContainer>
+
+          {/* показываем шутку если она есть */}
+          {!!joke && <Text>{joke}</Text>}
+
+          {/* показываем ошибку если она есть */}
+          {!!error && <ErrorText>{error}</ErrorText>}
+
+        </JokeContainer>
+
+        {/* кнопка для получения новой шутки */}
         <Button
-          disabled={isLoading}
-          name="Get Random Joke"
-          onClick={getRandomJoke}
+          disabled={isLoading} // блокируем кнопку во время загрузки
+          name="Get new joke"
+          onClick={getJoke} // при клике вызываем функцию
         />
+
       </Card>
     </PageWrapper>
   );
 }
 
+// экспорт компонента
 export default Homework_10;
