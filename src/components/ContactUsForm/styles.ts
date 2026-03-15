@@ -7,7 +7,8 @@ export const ContactUsContainer = styled.form`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  border-radius: 16px;
+  border: 1px solid #000000;
+  border-radius: 4px;
   background-color: white;
 `;
 

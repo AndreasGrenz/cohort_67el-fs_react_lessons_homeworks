@@ -24,7 +24,7 @@ const validationSchema = Yup.object().shape({
     .email("This field should be in email format"),
 });
 
-function ContactUs() {
+function ContactUsForm() {
   const formik = useFormik({
     initialValues: {
       [CONTACT_US_FORM_VALUES.FULL_NAME]: "",
@@ -81,4 +81,4 @@ function ContactUs() {
   );
 }
 
-export default ContactUs;
+export default ContactUsForm;
