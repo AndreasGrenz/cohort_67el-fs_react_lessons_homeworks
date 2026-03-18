@@ -11,6 +11,7 @@ function Clients () {
 
                 <ClientCard>
                     <ClientLink to="/clients/samsung">Samsung</ClientLink>
+                    
                 </ClientCard>
 
                 <ClientCard>

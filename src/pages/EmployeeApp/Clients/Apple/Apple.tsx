@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import Button from "components/Button/Button";
 
-import { PageWrapper, CompanyCard, Title, Description, ButtonControl } from "./styles";
+import { PageWrapper, CompanyCard, Title, Description, ButtonControl, CompanyLink } from "./styles";
 
 function Apple() {
   const navigate = useNavigate();
@@ -10,6 +10,10 @@ function Apple() {
   const goBack = () => {
     navigate(-1);
   };
+
+  // const goToAppleWebSite = () => {
+  //   window.open("https://www.apple.com", "_blank");
+  // }
 
   return (
     <PageWrapper>
@@ -20,9 +24,16 @@ function Apple() {
           tablets and software products.
         </Description>
 
+        <CompanyLink href="https://www.apple.com" target="blank">Apple Website</CompanyLink>
+
         <ButtonControl>
           <Button onClick={goBack} name="Go back" />
         </ButtonControl>
+
+        {/* <ButtonControl>
+            <Button onClick={goToAppleWebSite} name="Visit website" />
+        </ButtonControl> */}
+
       </CompanyCard>
     </PageWrapper>
   );

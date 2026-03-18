@@ -8,6 +8,7 @@ import {
   Title,
   Description,
   ButtonControl,
+  CompanyLink
 } from "./styles";
 
 function Samsung() {
@@ -17,6 +18,10 @@ function Samsung() {
     navigate(-1);
   };
 
+  // const goToSamsungWebSite = () => {
+  //   window.open("https://www.samsung.com", "_blank");
+  // }
+
   return (
     <PageWrapper>
       <CompanyCard>
@@ -25,9 +30,16 @@ function Samsung() {
           Samsung is a global company that produces electronics, smartphones,
           TVs, home appliances and other digital devices.
         </Description>
+
+        <CompanyLink href="www.samsung.com" target="blank">Samsung Website</CompanyLink>
+
         <ButtonControl>
             <Button onClick={goBack} name="Go back"/>
         </ButtonControl>
+
+         {/* <ButtonControl>
+            <Button onClick={goToSamsungWebSite} name="Visit website" />
+        </ButtonControl> */}
       </CompanyCard>
     </PageWrapper>
   );
