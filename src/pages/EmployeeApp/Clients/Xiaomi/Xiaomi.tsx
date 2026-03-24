@@ -6,6 +6,7 @@ import {
   Title,
   Description,
   ButtonControl,
+  CompanyLink
 } from "./styles";
 
 import Button from "components/Button/Button";
@@ -17,6 +18,10 @@ function Xiaomi() {
     navigate(-1);
   };
 
+  //  const goToXiaomiWebSite = () => {
+  //   window.open("https://www.xiaomi.com", "_blank");
+  // }
+
   return (
     <PageWrapper>
       <CompanyCard>
@@ -26,9 +31,16 @@ function Xiaomi() {
           devices and affordable consumer electronics.
         </Description>
 
+        <CompanyLink href="www.xiaomi.com" target="blank">Xiaomi Website</CompanyLink>
+
         <ButtonControl>
           <Button onClick={goBack} name="Go back" />
         </ButtonControl>
+
+         {/* <ButtonControl>
+            <Button onClick={goToXiaomiWebSite} name="Visit website" />
+        </ButtonControl> */}
+
       </CompanyCard>
     </PageWrapper>
   );

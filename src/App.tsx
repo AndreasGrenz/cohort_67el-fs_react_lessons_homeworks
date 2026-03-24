@@ -18,7 +18,7 @@ import GlobalStyles from "styles/GlobalStyles";
 // import Lesson_11 from "lessons/Lesson_11/Lesson_11";
 // import Lesson_12 from "lessons/Lesson_12/Lesson_12"
 // import Lesson_13 from "lessons/Lesson_13/Lesson_13"
-
+import Lesson_14 from 'lessons/Lesson_14/Lesson_14';
 
 // import Homework_06 from "homeworks/homework_06/Homework_06";
 // import Homework_07 from "homeworks/homework_07/Homework_07";
@@ -26,6 +26,8 @@ import GlobalStyles from "styles/GlobalStyles";
 // import Homework_09 from "homeworks/homework_09/homework_09"
 // import Homework_10 from "homeworks/homework_10/Homework_10";
 // import Homework_12 from "homeworks/homework_12/Homework_12";
+import Homework_14 from 'homeworks/homework_14/Homework_14';
+
 
 
 
@@ -34,7 +36,7 @@ function App() {
   return (
   <BrowserRouter>
   <GlobalStyles />
-  <Layout>
+  {/* <Layout>
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/about" element={<About />}/>
@@ -46,7 +48,7 @@ function App() {
       <Route path="/clients/xiaomi" element={<Xiaomi />}/>
       <Route path="*" element="Page not found"/>
     </Routes>
-  </Layout>
+  </Layout> */}
   {/* Homeworks */}
   {/* <Homework_06 /> */}
   {/* <Homework_07 /> */}
@@ -54,6 +56,7 @@ function App() {
   {/* <Homework_09/> */}
   {/* <Homework_10 /> */}
   {/* <Homework_12 /> */}
+  <Homework_14/>
 
   {/*Lessons */}
   {/* <Lesson_06/> */}
@@ -64,6 +67,7 @@ function App() {
   {/* <Lesson_11 /> */}
   {/* <Lesson_12 /> */}
   {/* <Lesson_13 /> */}
+  {/* <Lesson_14/> */}
 
   </BrowserRouter>
 );

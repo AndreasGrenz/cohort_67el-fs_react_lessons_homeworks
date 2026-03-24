@@ -36,3 +36,9 @@ export const ButtonControl = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+export const CompanyLink = styled.a`
+  font-size: 15px;
+  color: blue;
+  margin-top: 10px;
+`;  
